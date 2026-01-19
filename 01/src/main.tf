@@ -1,11 +1,11 @@
 terraform {
   required_providers {
     docker = {
-      source  = "kreuzwerker/docker"
-      
+      source = "kreuzwerker/docker"
+
     }
   }
-#  required_version = "~>1.12.0" 
+  required_version = "~>1.12.0"
 }
 provider "docker" {}
 
@@ -19,7 +19,7 @@ resource "random_password" "random_string" {
   min_numeric = 1
 }
 
-resource "docker_image" "nginx"{
+resource "docker_image" "nginx" {
   name         = "nginx:latest"
   keep_locally = true
 }
